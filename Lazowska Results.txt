@@ -1,0 +1,20 @@
+Lazoaska p 264
+		CPU	Disk1	Disk2	Disk3	Disk4
+S|A		v	1		1		1		1	
+V|A		8	2		2		2		2
+S|B		2	1		1		1		1
+V|B		20	2		4		6		8
+
+N|A = 10
+N|B = 6
+
+Z|A = 10
+Z|B = 0
+
+Class A Response Times at CPU
+
+S|A		2	0.5	0.125	0.03125
+		250	63	27		97 (laz mva)
+		250	131 98		97 (Simulation)
+		
+		250	50	11		2

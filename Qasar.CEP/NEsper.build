@@ -1,0 +1,444 @@
+<?xml version="1.0" ?>
+<project name="NEsper" default="Release" xmlnds="http://tempuri.org/nant-vs.xsd">
+  <!-- Global project settings -->
+  <property name="project.build.config" value="Release" readonly="false"/>
+  <property name="project.build.version" value="1.10.0" />
+  <property name="project.basedir"  value="${directory::get-current-directory()}" />
+  <property name="project.builddir" value="${project.basedir}/build" />
+  <property name="project.distdir"  value="${project.basedir}/dist/NEsper-${project.build.version}" />
+  <property name="project.libdir"   value="${project.basedir}/lib" />
+  <property name="project.docdir"   value="${project.basedir}/doc" />
+
+  <!-- Sandcastle Directories -->
+  <property name="sandcastle.dir"
+            value="C:\Program Files\Sandcastle" />
+  <property name="sandcastle.workingdir"
+            value="${project.basedir}\SandcastleWorkingDir" />
+  <property name="sandcastle.output.dir"
+            value="${sandcastle.workingdir}\Output" />
+  <!-- Sandcastle Executables -->
+  <property name="sandcastle.mrefbuilder.exe"
+            value="${sandcastle.dir}\ProductionTools\MrefBuilder.exe" />
+  <property name="sandcastle.buildassembler.exe"
+            value="${sandcastle.dir}\ProductionTools\BuildAssembler.exe" />
+  <property name="sandcastle.xsltransform.exe"
+            value="${sandcastle.dir}\ProductionTools\xsltransform.exe" />
+  <!-- Sandcastle Transformations -->
+  <property name="sandcastle.transforms"
+            value="${sandcastle.dir}\ProductionTransforms" />
+  <property name="sandcastle.addguidfilenames.xsl"
+            value="${sandcastle.dir}\ProductionTransforms\AddGuidFilenames.xsl" />
+  <property name="sandcastle.reflectiontomanifest.xsl"
+            value="${sandcastle.dir}\ProductionTransforms\ReflectionToManifest.xsl" />
+  <property name="sandcastle.reflectiontochmproject.xsl"
+            value="${sandcastle.dir}\ProductionTransforms\ReflectionToChmProject.xsl" />
+  <property name="sandcastle.reflectiontochmcontents.xsl"
+            value="${sandcastle.dir}\ProductionTransforms\ReflectionToChmContents.xsl" />
+  <property name="sandcastle.reflectiontochmindex.xsl"
+            value="${sandcastle.dir}\ProductionTransforms\ReflectionToChmIndex.xsl" />
+  <!-- Help Compiler -->
+  <property name="hhc.dir"
+            value="C:\Program Files\HTML Help Workshop" />
+  <property name="hhc.exe" overwrite="false"
+            value="${hhc.dir}\hhc.exe" />
+
+  <target name="Release">
+    <!-- Change configuration to release -->
+    <property name="project.build.config" value="Release" />
+    <!-- Create the build directory -->
+    <mkdir dir="${project.builddir}" />
+    <!-- Begin logging activity -->
+    <record name="${project.builddir}/BuildLog.txt" level="Info" action="Start"/>
+
+    <call target="Clean"/>
+    <call target="BuildSolution"/>
+    <call target="Test" />
+    <record name="${project.builddir}/BuildLog.txt" action="Close"/>
+  </target>
+
+  <target name="Release-NoTest">
+    <!-- Change configuration to release -->
+    <property name="project.build.config" value="Release" />
+    <!-- Create the build directory -->
+    <mkdir dir="${project.builddir}" />
+    <!-- Begin logging activity -->
+    <record name="${project.builddir}/BuildLog.txt" level="Info" action="Start"/>
+
+    <call target="Clean"/>
+    <call target="BuildSolution"/>
+    <record name="${project.builddir}/BuildLog.txt" action="Close"/>
+  </target>
+
+  <target name="Debug">
+    <!-- Change configuration to release -->
+    <property name="project.build.config" value="Debug" />
+    <!-- Create the build directory -->
+    <mkdir dir="${project.builddir}" />
+    <!-- Begin logging activity -->
+    <record name="${project.builddir}/BuildLog.txt" level="Info" action="Start"/>
+
+    <call target="Clean"/>
+    <call target="BuildSolution"/>
+    <call target="Test" />
+
+    <record name="${project.builddir}/BuildLog.txt" action="Close"/>
+  </target>
+
+  <target name="Debug-NoTest">
+    <!-- Change configuration to release -->
+    <property name="project.build.config" value="Debug" />
+    <!-- Create the build directory -->
+    <mkdir dir="${project.builddir}" />
+    <!-- Begin logging activity -->
+    <record name="${project.builddir}/BuildLog.txt" level="Info" action="Start"/>
+
+    <call target="Clean"/>
+    <call target="BuildSolution"/>
+
+    <record name="${project.builddir}/BuildLog.txt" action="Close"/>
+  </target>
+
+  <target name="CleanAll">
+    <property name="project.build.config" value="Debug" />
+    <call target="Clean"/>
+    <property name="project.build.config" value="Release" />
+    <call target="Clean"/>
+  </target>
+
+	<!-- Clean                                   -->
+	<!--                                         -->
+	<!-- Cleans the solution removing any files  -->
+	<!-- created by the BuildSolution, Examples, -->
+	<!-- and Documentation.                      -->
+  
+  <target name="Clean">
+    <msbuild project="${project.basedir}/NEsper/NEsper.sln">
+      <arg value="/property:Configuration=${project.build.config}" />
+      <arg value="/t:Clean" />
+    </msbuild>
+
+    <msbuild project="${project.basedir}/Examples/Examples.sln">
+      <arg value="/property:Configuration=${project.build.config}" />
+      <arg value="/t:Clean" />
+    </msbuild>
+    
+    <delete>
+       <fileset basedir="${sandcastle.workingdir}">
+          <include name="**\*" />
+       </fileset>
+    </delete>
+  </target>
+
+	<!-- BuildSolution                           -->
+	<!--                                         -->
+	<!-- Builds the core solution and unit tests -->
+
+  <target name="BuildSolution">
+    <echo message = "Start building the solution in ${project.build.config} mode ..." />
+
+    <msbuild project="${project.basedir}/NEsper/NEsper.sln">
+      <arg value="/property:Configuration=${project.build.config}" />
+      <arg value="/t:Rebuild" />
+    </msbuild>
+
+		<!-- Copy the libraries to libdir.  Copying the files here -->
+		<!-- ensures that the examples can compile whether the     -->
+		<!-- NEsper solution is built (e.g. build from source) or  -->
+		<!-- whether built from a release distribution.            -->
+
+    <call target="PostBuildSolution"/>
+  </target>
+
+	<target name="PostBuildSolution">
+		<copy todir="${project.libdir}">
+			<fileset basedir="${project.basedir}/NEsper/bin/${project.build.config}">
+				<include name="*.dll" />
+				<include name="*.pdb" />
+			</fileset>
+		</copy>
+
+		<copy todir="${project.libdir}">
+			<fileset basedir="${project.basedir}/NEsper.Tests/bin/${project.build.config}">
+				<include name="*.dll" />
+			</fileset>
+		</copy>
+
+		<copy todir="${project.libdir}">
+			<fileset basedir="${project.basedir}/NEsper.IO/bin/${project.build.config}">
+				<include name="*.dll" />
+				<include name="*.pdb" />
+			</fileset>
+		</copy>
+
+		<copy todir="${project.libdir}">
+			<fileset basedir="${project.basedir}/NEsper.IO.Tests/bin/${project.build.config}">
+				<include name="*.dll" />
+			</fileset>
+		</copy>
+	</target>
+ 
+	<!-- Test                                    -->
+	<!--                                         -->
+	<!-- Runs the unit tests.  Generates a       -->
+	<!-- report from the results of the test     -->
+	<!-- run.                                    -->
+
+  <target name="Test">
+	<mkdir dir="${project.basedir}/NEsper.Tests/bin/${project.build.config}/regression"/>
+	<copy todir="${project.basedir}/NEsper.Tests/bin/${project.build.config}/regression">
+		<fileset basedir="${project.basedir}/etc/regression">
+			<include name="**/*" />
+		</fileset>
+	</copy>
+    
+	<echo message="Starting nunit against ${project.basedir}/NEsper.Tests/bin/${project.build.config}/NEsper.Tests.dll" />
+	
+    <nunit2 failonerror="false">
+      <formatter type="Xml" outputdir="${project.builddir}/" extension=".xml" usefile="true" />
+      <test assemblyname="${project.basedir}/NEsper.Tests/bin/${project.build.config}/NEsper.Tests.dll"
+               appconfig="${project.basedir}/NEsper.Tests/bin/${project.build.config}/NEsper.Tests.dll.config" />
+    </nunit2>
+
+    <call target="GenerateNUnitReport" />
+  </target>
+
+  <target name="GenerateNUnitReport">
+    <echo message="Generating NUnit Report" />
+    <nunit2report todir="${project.builddir}/">
+      <fileset>
+        <include name="${project.builddir}/NEsper.Tests.dll-results.xml" />
+      </fileset>
+    </nunit2report>
+  </target>
+
+	<!-- Examples                                -->
+	<!--                                         -->
+	<!-- Build the examples shipped with NEsper. -->
+	<!-- While "Examples" should normally depend -->
+	<!-- on the "BuildSolution" target, we need  -->
+	<!-- to account for building the examples    -->
+	<!-- against a release distribution.  In     -->
+	<!-- those cases, the libs are in libdir.    -->
+
+	<target name="Examples">    
+		<msbuild project="${project.basedir}/Examples/Examples.sln">
+		<arg value="/property:Configuration=${project.build.config}" />
+		<arg value="/t:Rebuild" />
+		</msbuild>
+		
+		<call target="CopyExamplesToBin"/>
+	</target>
+	
+	<target name="CopyExamplesToBin">
+		<copy todir="${project.basedir}/Examples/bin" flatten="true">
+			<fileset basedir="${project.basedir}/Examples">
+				<include name="**/bin/${project.build.config}/NEsper.Examples.*.exe" />
+				<include name="**/bin/${project.build.config}/NEsper.Examples.*.dll" />
+				<include name="**/bin/${project.build.config}/NEsper.Examples.*.pdb" />
+			</fileset>
+		</copy>
+	</target>
+
+	<!-- Documentation                           -->
+	<!--                                         -->
+	<!-- Generate documentation.  Assumes you    -->
+	<!-- Sandcastle installed.                   -->
+  
+  <target name="Documentation">
+    <call target="DocumentationPrep" />
+    <call target="DocumentationTransforms" />
+    <call target="DocumentationAssemble" />
+    <call target="DocumentationHTML" />
+    <call target="DocumentationCHM" />
+    <call target="DocumentationPost" />
+  </target>
+
+  <target name="DocumentationPrep">
+    <!-- Create or Cleanup Working Directory -->
+    <mkdir dir="${sandcastle.workingdir}" if="${not directory::exists(sandcastle.workingdir)}" />
+    <delete>
+      <fileset basedir="${sandcastle.workingdir}">
+        <include name="**\*" />
+      </fileset>
+    </delete>
+
+    <!-- Copy configuration file, and hard code references -->
+    <copy file="${sandcastle.dir}/Presentation/vs2005/Configuration/Sandcastle.config"
+          tofile="${sandcastle.workingdir}/Sandcastle.config">
+      <filterchain>
+        <!--
+              <replacestring from="&quot;..\..\" to="&quot;${sandcastle.dir}\" /> 
+              <replacestring from="&quot;..\" to="&quot;${sandcastle.dir}\Examples\" />
+              -->
+        <replacestring from="&quot;comments.xml" to="&quot;${project.basedir}/NEsper/bin/${project.build.config}/*.xml" />
+      </filterchain>
+    </copy>
+  </target>
+
+  <target name="DocumentationTransforms">
+    <!-- Run MRefBuilder (introspection on assemblies) to create basic Reflection XML -->
+    <exec program="${sandcastle.mrefbuilder.exe}" workingdir="${sandcastle.workingdir}">
+      <arg value="${project.basedir}/NEsper/bin/${project.build.config}/NEsper.dll" />
+      <arg value="/out:reflection.org1.xml" />
+      <arg value="/dep:${framework::get-assembly-directory(framework::get-target-framework())}/System.Configuration.dll" />
+      <arg value="/dep:${project.libdir}/*.dll" />
+    </exec>
+
+    <!-- Create final Reflection XML -->
+    <!-- Regroup overloads -->
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}">
+      <arg value="/xsl:&quot;${sandcastle.transforms}/ApplyVSDocModel.xsl&quot;" />
+      <arg value="reflection.org1.xml" />
+      <arg value="/xsl:&quot;${sandcastle.transforms}/AddFriendlyFilenames.xsl&quot;" />
+      <arg value="/out:reflection.xml" />
+    </exec>
+
+    <!-- Create Manifest (list of Topics) -->
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}">
+      <arg value="/xsl:&quot;${sandcastle.transforms}/ReflectionToManifest.xsl&quot;" />
+      <arg value="reflection.xml" />
+      <arg value="/out:manifest.xml" />
+    </exec>
+  </target>
+
+  <target name="DocumentationAssemble">
+    <!-- Create Output Environment -->
+    <mkdir dir="${sandcastle.output.dir}" />
+    <mkdir dir="${sandcastle.output.dir}/html" />
+    <copy todir="${sandcastle.output.dir}">
+      <fileset basedir="${sandcastle.dir}/Presentation/vs2005">
+        <include name="Icons/*" />
+        <include name="Scripts/*" />
+        <include name="Styles/*" />
+        <include name="Media/*" />
+      </fileset>
+    </copy>
+
+    <!-- Run BuildAssembler (create html topic files) -->
+    <exec program="${sandcastle.buildassembler.exe}" workingdir="${sandcastle.workingdir}" >
+      <arg value="manifest.xml" />
+      <arg value="/config:Sandcastle.config" />
+    </exec>
+  </target>
+
+  <target name="DocumentationHTML">
+    <!-- Create html Help project -->
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}">
+      <arg value="/xsl:&quot;${sandcastle.transforms}/ReflectionToChmProject.xsl&quot;" />
+      <arg value="reflection.xml" />
+      <arg value="/out:&quot;${sandcastle.output.dir}/test.hhp&quot;" />
+    </exec>
+
+    <!-- Create html Help project Table Of Contents -->
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}" >
+      <arg value="/xsl:&quot;${sandcastle.transforms}/CreateVsTOC.xsl&quot;" />
+      <arg value="reflection.xml" />
+      <arg value="/out:&quot;${sandcastle.output.dir}/toc.xml&quot;" />
+    </exec>
+
+    <!-- Create html Help project Index -->
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}" >
+      <arg value="/xsl:&quot;${sandcastle.transforms}/TocToChmContents.xsl&quot;" />
+      <arg value="${sandcastle.output.dir}/toc.xml" />
+      <arg value="/out:&quot;${sandcastle.output.dir}/test.hhc&quot;" />
+    </exec>
+
+    <exec program="${sandcastle.xsltransform.exe}" workingdir="${sandcastle.workingdir}" >
+      <arg value="/xsl:&quot;${sandcastle.transforms}/ReflectionToChmIndex.xsl&quot;" />
+      <arg value="reflection.xml" />
+      <arg value="/out:&quot;${sandcastle.output.dir}/test.hhk&quot;" />
+    </exec>
+  </target>
+
+  <target name="DocumentationCHM">
+    <!-- Generate CHM file -->
+    <exec program="${hhc.exe}"
+          commandline="test.hhp"
+          workingdir="${sandcastle.output.dir}"
+          failonerror="false"/>
+    <move file="${sandcastle.output.dir}/test.chm"
+        tofile="${sandcastle.output.dir}/NEsper.chm" />
+  </target>
+
+  <target name="DocumentationPost">
+	<!--
+    <copy file="${sandcastle.output.dir}/html/R_Project.htm"
+        tofile="${sandcastle.output.dir}/html/index.htm" />
+	-->
+
+    <delete file="${project.docdir}/NEsper.chm"/>
+
+    <copy todir="${project.docdir}/NEsper_HTML">
+      <fileset basedir="${sandcastle.output.dir}">
+        <include name="**/*" />
+        <exclude name="test.*" />
+        <exclude name="NEsper_API.chm" />
+        <exclude name="toc.xml" />
+      </fileset>
+    </copy>
+
+    <copy file="${sandcastle.output.dir}/NEsper.chm"
+         todir="${project.docdir}" />
+
+    <!--
+	<delete>
+	   <fileset basedir="${sandcastle.workingdir}">
+		  <include name="**\*" />
+	   </fileset>
+	</delete>
+    -->
+  </target>
+
+  <target name="Distribution">
+    <mkdir dir="${project.distdir}" />
+    <copy todir="${project.distdir}">
+      <fileset basedir="${project.basedir}">
+        <exclude name="**\*.suo" />
+        <exclude name="**\*.csproj.user" />
+
+        <include name="NEsper.build" />
+        <include name="NEsper.snk.readme" />
+		
+		<include name="NEsper\Examples\bin\**" />
+
+        <include name="NEsper\**" />
+        <exclude name="NEsper\obj\**" />
+        <exclude name="NEsper\bin\**" />
+        
+        <include name="NEsper.Tests\**" />
+        <exclude name="NEsper.Tests\obj\**" />
+        <exclude name="NEsper.Tests\bin\**" />
+
+        <include name="NEsper.IO\**" />
+        <exclude name="NEsper.IO\obj\**" />
+        <exclude name="NEsper.IO\bin\**" />
+
+        <include name="NEsper.IO.Tests\**" />
+        <exclude name="NEsper.IO.Tests\obj\**" />
+        <exclude name="NEsper.IO.Tests\bin\**" />
+
+        <include name="Examples\**" />
+        <exclude name="Examples\**\obj\**" />
+        <exclude name="Examples\**\bin\**" />
+
+        <include name="doc\**" />
+        <include name="etc\**" />
+        <include name="grammar\**" />
+        <include name="lib\**" />
+      </fileset>
+    </copy>
+
+    <echo message="Checking NEsper assemblies in ${project.basedir}/NEsper/bin/${project.build.config}" />
+    <copy todir="${project.distdir}/lib">
+      <fileset basedir="${project.basedir}/NEsper/bin/${project.build.config}">
+        <include name="*.dll" />
+      </fileset>
+    </copy>
+
+		<zip zipfile="${project.basedir}/dist/NEsper-${project.build.version}.zip" ziplevel="9">
+			<fileset basedir="${project.basedir}/dist">
+				<include name="NEsper-${project.build.version}/**" />
+			</fileset>
+		</zip>
+  </target>
+</project>

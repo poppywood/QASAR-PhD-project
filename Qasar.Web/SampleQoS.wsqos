@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsqos:wsqos xmlns:wsqos="http://www.wsqos.net/schemas/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.wsqos.net/schemas/" >
+	<definition>
+		<requirements name="Test Requirements">
+			<defaultQoSInfo>
+				<serverQoSMetrics>
+					<processingTime>0.5</processingTime>
+					<requestsPerSecond>10</requestsPerSecond>
+					<availability>0.77</availability>
+				</serverQoSMetrics>
+				<transportQoSPriorities>
+					<delay>9</delay>
+					<jitter>8</jitter>
+					<throughput>8</throughput>
+					<packetLoss>7</packetLoss>
+					<customPriority name="ATM_CLR">3</customPriority>
+				</transportQoSPriorities>
+				<securityAndTransaction name="musthave" requires="one">
+					<!-- protocol name="SOAP" / -->
+					<!-- protocol name="XML_Enc" / -->
+					<!-- protocol name="MyEnc" ontology="http://www.inf.fu-berlin.de/inst/ag-tech/wsqos/ontologies/CustomOntology.wsqos" / -->
+				</securityAndTransaction>
+			</defaultQoSInfo>
+			<operationQoSInfo name="GetCompanyName">
+				<serverQoSMetrics>
+					<customMetric name="CPU_Share">68</customMetric>
+				</serverQoSMetrics>
+				<transportQoSPriorities>
+					<delay>7</delay>
+				</transportQoSPriorities>
+			</operationQoSInfo>
+			<operationQoSInfo name="GetStockQuote">
+				<serverQoSMetrics>
+					<processingTime>6</processingTime>
+					<reliability>0.88</reliability>
+				</serverQoSMetrics>
+				<transportQoSPriorities>
+					<customPriority name="Magic-Thrpt" ontology="http://www.inf.fu-berlin.de/inst/ag-tech/wsqos/ontologies/CustomOntology.wsqos">8</customPriority>
+				</transportQoSPriorities>
+			</operationQoSInfo>
+			<price currency="EUR">0.22</price>
+		</requirements>
+	</definition>
+</wsqos:wsqos>

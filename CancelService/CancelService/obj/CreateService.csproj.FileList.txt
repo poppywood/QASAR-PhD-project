@@ -1,0 +1,5 @@
+bin\CreateService.dll
+bin\CreateService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\CreateService.dll
+obj\Debug\CreateService.pdb

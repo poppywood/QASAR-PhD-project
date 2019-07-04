@@ -1,0 +1,7 @@
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\bin\Debug\Qasar.DataLayer.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\bin\Debug\Qasar.DataLayer.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\bin\Debug\Qasar.Objects.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\bin\Debug\Qasar.Objects.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\obj\Debug\Qasar.DataLayer.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.DataLayer\obj\Debug\Qasar.DataLayer.pdb

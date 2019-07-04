@@ -1,0 +1,827 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Qasar.ESB.Core</name>
+    </assembly>
+    <members>
+        <member name="T:Qasar.ESB.Pipeline.PostProcessor">
+            <summary>
+            Performs post-processing to get the pipeline output into the desired form
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.PostProcessor.Parse(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Parse
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qasar.ESB.Filter.CallbackWebServiceFilter">
+            <summary>
+            WebServicePipe builds SOAP messages, sends them to the appropriate Web Service
+            and returns the response
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.FilterBase">
+            <summary>
+            base class for all filters
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.IFilter">
+            <summary>
+            Pipeline Interface
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.IFilter.Process(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            This method executes the pipe
+            </summary>
+            <param name="input"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Qasar.ESB.Filter.IFilter.Name">
+            <summary>
+            Pipe name
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.IFilter.Code">
+            <summary>
+            Pipe code for rule-engine lookups
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.FilterBase.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            All sub classes of FilterBase must implement ProcessData. This is the function
+            that executes the work of the filter.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Qasar.ESB.Filter.FilterBase.Process(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            The Pipeline Builder calls process to execute the filter.
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Qasar.ESB.Filter.FilterBase.Name">
+            <summary>
+            The name of the filter
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.FilterBase.Code">
+            <summary>
+            The code of the filter
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.FilterBase.SkipOnFailure">
+            <summary>
+            override this property to return false if your filter must always process
+            even if a filter earlier in the chain has failed.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Filter.CallbackWebServiceFilter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.CallbackWebServiceFilter.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Enables a POST of a SOAP message to a web service using a callback 
+            in case of long running transaction 
+            </summary>
+            <param name="data">The complete SOAP msg</param>
+            <returns>The SOAP response</returns>
+        </member>
+        <member name="P:Qasar.ESB.Filter.CallbackWebServiceFilter.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.CallbackWebServiceFilter.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:Qasar.ESB.Helpers.DefaultProvider" -->
+        <member name="M:Qasar.ESB.Helpers.DefaultProvider.Insert(System.String,System.String,System.String,System.String,System.Xml.XmlNamespaceManager,System.Boolean)">
+            <summary>
+            Appends default values into a single instance of the target node
+            </summary>
+            <param name="request">The request</param>
+            <param name="defaultfile">The file from which to extract defaults</param>
+            <param name="appendnode">The node into which to append the defaults</param>
+            <param name="insertbefore">The insert before node</param>
+            <param name="mgr">A namespace manager</param>
+            <param name="insertmultiple">When true attempts to insert multiple copies of the defaults into multiple target nodes</param>
+            <returns>The modified request</returns>
+        </member>
+        <member name="T:Qasar.ESB.Adapter.SMTPAdapter">
+            <summary>
+            SMTP Adapter
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Helpers.XPathHelper">
+            <summary>
+            This class provides useful methods for managing XPath 
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.UpdateElement(System.Xml.XmlDocument,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Updates an element
+            </summary>
+            <param name="xml">XmlDocument to edit</param>
+            <param name="value">value to apply</param>
+            <param name="path">XPath to element</param>
+            <param name="mgr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.ReadElement(System.Xml.XmlDocument,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Reads an element
+            </summary>
+            <param name="xml">XmlDocument to read</param>
+            <param name="path">Xpath to element</param>
+            <param name="mgr"></param>
+            <returns>The inner xml</returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.RemoveElement(System.Xml.XmlDocument,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Remove specified child node 
+            </summary>
+            <param name="xml">XmlDocument</param>
+            <param name="path">Node containing child</param>
+            <param name="child">Child</param>
+            <param name="mgr">Namespace mgr</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.AddElement(System.Xml.XmlDocument,System.String,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Adds a new element
+            </summary>
+            <param name="xml">XmlDocument</param>
+            <param name="name">Name of new element</param>
+            <param name="value">Value of element</param>
+            <param name="path">XPath pointing to node in which to insert Element</param>
+            <param name="nextpath">Optional XPath pointing to sibling node following new Element. If a null is supplied
+            the method will just append the new element at the end of any other elements</param>
+            <param name="mgr">Namespace manager</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.AttachElement(System.Xml.XmlDocument,System.String,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Attaches a new element After the node specified
+            </summary>
+            <param name="xml">XmlDocument</param>
+            <param name="name">Name of new element</param>
+            <param name="value">Value of element</param>
+            <param name="path">XPath pointing to node in which to insert Element</param>
+            <param name="nextpath">Optional XPath pointing to  node preceding new Element</param>
+            <param name="mgr">Namespace manager</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.AddManyElements(System.Xml.XmlDocument,System.String,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Adds a new element to each of many existing elements
+            </summary>
+            <param name="xml">XmlDocument</param>
+            <param name="name">Name of new element</param>
+            <param name="value">Value of element</param>
+            <param name="path">XPath pointing to nodes in which to insert Element</param>
+            <param name="nextpath">Optional XPath pointing to sibling node following new Element. If a null is supplied
+            the method will just append the new element at the end of any other elements</param>
+            <param name="mgr">Namespace manager</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Helpers.XPathHelper.AttachManyElements(System.Xml.XmlDocument,System.String,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)">
+            <summary>
+            Attaches a new element to each of many existing elements, after the node specified
+            </summary>
+            <param name="xml">XmlDocument</param>
+            <param name="name">Name of new element</param>
+            <param name="value">Value of element</param>
+            <param name="path">XPath pointing to nodes in which to insert Element</param>
+            <param name="nextpath">Optional XPath pointing to node preceding new Element.</param>
+            <param name="mgr">Namespace manager</param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:Qasar.ESB.Helpers.XPathHelper.AddAttribute(System.Xml.XmlDocument,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)" -->
+        <!-- Badly formed XML comment ignored for member "M:Qasar.ESB.Helpers.XPathHelper.AddXsiAttribute(System.Xml.XmlDocument,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)" -->
+        <!-- Badly formed XML comment ignored for member "M:Qasar.ESB.Helpers.XPathHelper.AddManyAttributes(System.Xml.XmlDocument,System.String,System.String,System.String,System.Xml.XmlNamespaceManager)" -->
+        <member name="T:Qasar.ESB.Filter.AsyncCallbackFilter">
+            <summary>
+            AsyncCallbackFilter
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.AsyncCallbackFilter.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.AsyncCallbackFilter.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Process
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Qasar.ESB.Filter.AsyncCallbackFilter.GetPolicyResponse(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Create a policy response object from the pipe data.
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Filter.AsyncCallbackFilter.GetPolicyResponseAsXml(Qasar.ESB.PolicyResponse)">
+            <summary>
+            Convert the policy response object into a suitable soap body by serializing it as xml
+            and wrapping it with a Callback method.
+            </summary>
+            <param name="policyResponse"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Qasar.ESB.Filter.AsyncCallbackFilter.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.AsyncCallbackFilter.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.AsyncCallbackFilter.SkipOnFailure">
+            <summary>
+            This filter should run even if a failure has occured earlier in the pipeline, so set
+            SkipOnFailure to return false.
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.ConfigEngine.PipelineRule">
+            <summary>
+            Provides Pipeline Rules
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.ConfigEngine.PipelineRule.PipelineValue(System.Int32@,System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Pipeline sequence LookUp
+            </summary>
+            <param name="FilterCode"></param>
+            <param name="RuleCode"></param>
+            <param name="ProductCode"></param>
+            <param name="ActionCode"></param>
+            <param name="SubActionCode"></param>
+            <param name="SourceCode"></param>
+            <param name="UserCode"></param>
+            <returns>A string rule value</returns>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.PreProcessor">
+            <summary>
+            Performs pre-processing to get the pipeline input into the desired form
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.WebServiceFilter">
+            <summary>
+            WebServicePipe builds SOAP messages, sends them to the appropriate Web Service
+            and returns the response
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.WebServiceFilter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.WebServiceFilter.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Enables a POST of a SOAP message to a web service.
+            </summary>
+            <param name="msg">The complete SOAP msg</param>
+            <returns>The SOAP response</returns>
+        </member>
+        <member name="P:Qasar.ESB.Filter.WebServiceFilter.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.WebServiceFilter.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Core.IntegrationHub">
+            <summary>
+            IntegrationHub
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Core.IntegrationHub.SubmitPolicy(Qasar.ESB.PolicyRequest)">
+            <summary>
+            This method accepts policy data
+            </summary>
+            <param name="request">A PolicyRequest message</param>
+            <returns>A PolicyResponse message</returns>
+        </member>
+        <member name="M:Qasar.ESB.Core.IntegrationHub.BeginSubmitPolicy(Qasar.ESB.PolicyRequest,System.AsyncCallback,System.Object)">
+            <summary>
+            Asyncronous version of SubmitPolicy, uses the standard dotnet AsnycResult pattern.
+            </summary>
+            <param name="request"></param>
+            <param name="callback"></param>
+            <param name="state"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Core.IntegrationHub.EndSubmitPolicy(System.IAsyncResult)">
+            <summary>
+            standard End method for SubmitPolicy, uses IAsyncResult pattern.
+            </summary>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.Audit">
+            <summary>
+            Provides an audit of each pipeline transaction
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Audit.#ctor(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Audit.PipelineCreate(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            This method creates the initial audit entry for the pipeline audit
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Audit.PipelineLog(System.Int32)">
+            <summary>
+            This methods Logs the result for the pipeline
+            </summary>
+            <param name="pipelineId">id of the pipeline</param>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Audit.FilterCreate(System.String)">
+            <summary>
+            FilterCreate
+            </summary>
+            <param name="data"></param>
+            <param name="filterName"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Qasar.ESB.Pipeline.Audit.Id">
+            <summary>
+            The audit Id
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.IEntity">
+            <summary>
+            All classes used by the hub implement this interface so that they can be generically passed
+            in and out of the Pipeline
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Credentials">
+            <remarks/>
+        </member>
+        <member name="T:Qasar.ESB.RequestType">
+            <summary>
+            Global Request Types
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.PolicyRequest">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.Policy">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRef">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.ProductCode">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.Action">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.Credentials">
+            <remarks/>
+        </member>
+        <member name="T:Qasar.ESB.PolicyRequest.PolicyRequestAction">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.Cancel">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.Create">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.Reinstate">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.Renew">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.Update">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyRequest.PolicyRequestAction.None">
+            <remarks/>
+        </member>
+        <member name="T:Qasar.ESB.PolicyResponse">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyResponse.OverallResult">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyResponse.Result">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyResponse.PolicyRef">
+            <remarks/>
+        </member>
+        <member name="F:Qasar.ESB.PolicyResponse.ProductCode">
+            <remarks/>
+        </member>
+        <member name="T:Qasar.ESB.Security">
+            <summary>
+            Provides security checks
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.MyFilter">
+            <summary>
+            Use this template by copying and pasting it into your own filter class.
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.MyFilter.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.MyFilter.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Qasar.ESB.Filter.MyFilter.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.MyFilter.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.ConfigEngine.Rule">
+            <summary>
+            A mini rule engine
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.ConfigEngine.Rule.#ctor(System.Int32)">
+            <summary>
+            Tracks the number of calls to a particular rule value
+            This allows the same rule with the same parameters
+            to be called mutliple times in a pipeline, returning
+            different values each time.
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.ConfigEngine.Rule.Value(System.String,System.String,System.String,System.String,System.String,System.String,System.String,Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Rule LookUp
+            </summary>
+            <param name="FilterCode"></param>
+            <param name="RuleCode"></param>
+            <param name="ProductCode"></param>
+            <param name="ActionCode"></param>
+            <param name="SubActionCode"></param>
+            <param name="SourceCode"></param>
+            <param name="UserCode"></param>
+            <returns>A string rule value</returns>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.Notification">
+            <summary>
+            Manages Notifications
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Notification.Raise(System.Int32,Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Send mail to HelpDesk
+            </summary>
+            <param name="r"></param>
+            <param name="id"></param>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Notification.SanitiseError(System.Int32,Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Sanitise content to return to source system.
+            </summary>
+            <param name="r"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qasar.ESB.Helpers.ExceptionHandler">
+            <summary>
+            A handler for exceptions
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.PipeData">
+            <summary>
+            Holds the data that's passed through the pipline filters
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.PipeData.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.String,System.Int32,Qasar.ESB.IEntity)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="action"></param>
+            <param name="subAction"></param>
+            <param name="productCode"></param>
+            <param name="source"></param>
+            <param name="userId"></param>
+            <param name="reference"></param>
+            <param name="request"></param>
+        </member>
+        <member name="M:Qasar.ESB.Filter.PipeData.SetFailure">
+            <summary>
+            sets _success = false. do it this was rather than settable property
+            because _success should never be set back to true.
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.PipeData.SetNotificationFailure">
+            <summary>
+            sets _notification = true. do it this way so that it can't be set back to false.
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.RequestType">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.SubAction">
+            <summary>
+            SubAction
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.ProductCode">
+            <summary>
+            ProductCode
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.UserId">
+            <summary>
+            UserId
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Reference">
+            <summary>
+            Reference
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Entity">
+            <summary>
+            Entity
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Rule">
+            <summary>
+            Rule
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Request">
+            <summary>
+            Request
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Snapshot">
+            <summary>
+            Snapshot
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.ResourceID">
+            <summary>
+            ResourceID
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.ClassID">
+            <summary>
+            ClassID
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Success">
+            <summary>
+            Success
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Failed">
+            <summary>
+            Failed
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.PipeData.Notification">
+            <summary>
+            Notification
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.Pipeline">
+            <summary>
+            a collection of filters that makes a pipeline
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Pipeline.#ctor(System.Int32)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="P:Qasar.ESB.Pipeline.Pipeline.Id">
+            <summary>
+            The pipeline Id
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Filter.XsltFilter">
+            <summary>
+            Uses config to identify Xslt to use
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.XsltFilter.#ctor">
+            <summary>
+            XsltFilter
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.XsltFilter.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            Process
+            </summary>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Filter.XsltFilter.LoadResourceXsltIntoXslTransform(System.Xml.Xsl.XslTransform,System.String)">
+            <summary>
+            Loads the named resource into the XslTransform object
+            </summary>
+            <param name="xlsTransform"></param>
+            <param name="resourceName"></param>
+        </member>
+        <member name="P:Qasar.ESB.Filter.XsltFilter.Name">
+            <summary>
+            Name
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.XsltFilter.Code">
+            <summary>
+            Code
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.Builder">
+            <summary>
+            Pipeline design pattern - this is the pipeline builder
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Builder.#ctor">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.Builder.Process(Qasar.ESB.IEntity)">
+            <summary>
+            </summary>
+            <param name="request"></param>
+            <param name="entityType"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Qasar.ESB.Pipeline.FilterAudit">
+            <summary>
+            FilterAudit encapsulates auditing for a filter.
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.FilterAudit.#ctor(Qasar.ESB.Filter.PipeData,System.Int32,System.String)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="data"></param>
+            <param name="id"></param>
+            <param name="name"></param>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.FilterAudit.FilterCreate(System.Int32,System.String)">
+            <summary>
+            This method creates the initial audit entry for each filter audit
+            </summary>
+            <param name="id"></param>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Pipeline.FilterAudit.Log">
+            <summary>
+            This methods Logs the result for the filter
+            </summary>
+            <param name="r">pipeResult</param>
+            <param name="data"></param>
+            <param name="id"></param>
+        </member>
+        <member name="T:Qasar.ESB.Filter.SOAPBody">
+            <summary>
+            Extract the body from the content. 
+            Assumes the content is provided as a fully-formed
+            SOAP envelope, and takes out whatever it
+            finds between the Body tags.
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.SOAPBody.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Filter.SOAPBody.ProcessData(Qasar.ESB.Filter.PipeData)">
+            <summary>
+            
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="P:Qasar.ESB.Filter.SOAPBody.Name">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Qasar.ESB.Filter.SOAPBody.Code">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Qasar.ESB.Adapter.SOAPAdapter">
+            <summary>
+            SOAPAdapter
+            </summary>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.RequestReply(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Sync request-response SOAP submit to a Web Service
+            </summary>
+            <param name="content">Xml SOAP Body</param>
+            <param name="url">Web Service Url</param>
+            <param name="action">Web Service action</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.RequestReply(System.String,System.String,System.String)">
+            <summary>
+            As above but takes a string for content
+            </summary>
+            <param name="content"></param>
+            <param name="url"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.Callback(System.Xml.XmlDocument,System.String,System.String)">
+            <summary>
+            Callback to a Web Service - the thread is suspended until the callback returns
+            </summary>
+            <param name="content">Xml SOAP Body</param>
+            <param name="url">Web Service Url</param>
+            <param name="action">Web Service action</param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.Callback(System.String,System.String,System.String)">
+            <summary>
+            As above but takes a string as content.
+            </summary>
+            <param name="content"></param>
+            <param name="url"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.CreateSoapEnvelope(System.Xml.XmlDocument)">
+            <summary>
+            Creates a soap envelope by wrapping the given content xml document in a soap envelope
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.CreateSoapEnvelope(System.String)">
+            <summary>
+            Creates a soap envelope by string manipulation before creating the xml document.
+            </summary>
+            <param name="content"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.CreateWebRequest(System.String,System.String)">
+            <summary>
+            Create a web request object for the given url and action
+            </summary>
+            <param name="url"></param>
+            <param name="action"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.InsertSoapEnvelopeIntoWebRequest(System.Xml.XmlDocument,System.Net.HttpWebRequest)">
+            <summary>
+            Insert the soap envelope into the web request.
+            </summary>
+            <param name="soapEnvelopeXml"></param>
+            <param name="webRequest"></param>
+        </member>
+        <member name="M:Qasar.ESB.Adapter.SOAPAdapter.ExecuteWebRequest(System.Net.HttpWebRequest)">
+            <summary>
+            Execute the web request and return the result as a string
+            </summary>
+            <param name="webRequest"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

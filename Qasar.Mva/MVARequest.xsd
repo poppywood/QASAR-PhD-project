@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp1 (http://www.altova.com) by Shelly Saunders (ACE INA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://qasar.shellysaunders.co.uk/MVARequest" targetNamespace="http://qasar.shellysaunders.co.uk/MVARequest" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="MVARequest">
+		<xs:annotation>
+			<xs:documentation>Comment describing your root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Classes">
+					<xs:annotation>
+						<xs:documentation>Use this node for dynamic load balancing, self-healing tests and perf optimisation tests</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Class" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ClassID" type="xs:int" />
+										<xs:element name="Include" type="xs:boolean" minOccurs="0" default="true" />
+										<xs:element name="TotalPopulation" type="xs:int" />
+										<xs:element name="Resources">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="Resource" maxOccurs="unbounded">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="ResourceID" type="xs:int" />
+																<xs:element name="Internal" type="xs:boolean" minOccurs="0" default="true" />
+																<xs:element name="ServiceTime" type="xs:double" />
+																<xs:element name="LoadRatio" type="xs:double" />
+																<xs:element name="EquivLoad" type="xs:double" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Clients" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Use this node to specify client-based admission control</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Client" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ClientID" type="xs:int" />
+										<xs:element name="Include" type="xs:boolean" minOccurs="0" default="true" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="NoResources" type="xs:int" />
+				<xs:element name="NoClasses" type="xs:int" />
+				<xs:element name="NoClients" type="xs:int" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,222 @@
+// $ANTLR 2.7.7 (20060930): eql_tree.g -> EqlEvalTokenTypes.txt$
+EqlEval    // output token vocab name
+IN_SET="in"=4
+BETWEEN="between"=5
+LIKE="like"=6
+REGEXP="regexp"=7
+ESCAPE="escape"=8
+OR_EXPR="or"=9
+AND_EXPR="and"=10
+NOT_EXPR="not"=11
+EVERY_EXPR="every"=12
+WHERE="where"=13
+AS="as"=14
+SUM="sum"=15
+AVG="avg"=16
+MAX="max"=17
+MIN="min"=18
+COALESCE="coalesce"=19
+MEDIAN="median"=20
+STDDEV="stddev"=21
+AVEDEV="avedev"=22
+COUNT="count"=23
+SELECT="select"=24
+CASE="case"=25
+CASE2=26
+ELSE="else"=27
+WHEN="when"=28
+THEN="then"=29
+END="end"=30
+FROM="from"=31
+OUTER="outer"=32
+JOIN="join"=33
+LEFT="left"=34
+RIGHT="right"=35
+FULL="full"=36
+ON="on"=37
+IS_="is"=38
+BY="by"=39
+GROUP="group"=40
+HAVING="having"=41
+DISTINCT="distinct"=42
+ALL="all"=43
+OUTPUT="output"=44
+EVENTS="events"=45
+SECONDS="seconds"=46
+MINUTES="minutes"=47
+FIRST="first"=48
+LAST="last"=49
+INSERT="insert"=50
+INTO="into"=51
+ORDER="order"=52
+ASC="asc"=53
+DESC="desc"=54
+RSTREAM="rstream"=55
+ISTREAM="istream"=56
+PATTERN="pattern"=57
+SQL="sql"=58
+PREVIOUS="prev"=59
+PRIOR="prior"=60
+EXISTS="exists"=61
+WEEKDAY="weekday"=62
+LW="lastweekday"=63
+NUMERIC_PARAM_RANGE=64
+NUMERIC_PARAM_LIST=65
+NUMERIC_PARAM_FREQUENCY=66
+FOLLOWED_BY_EXPR=67
+ARRAY_PARAM_LIST=68
+EVENT_FILTER_EXPR=69
+EVENT_FILTER_NAME_TAG=70
+EVENT_FILTER_IDENT=71
+EVENT_FILTER_PARAM=72
+EVENT_FILTER_RANGE=73
+EVENT_FILTER_NOT_RANGE=74
+EVENT_FILTER_IN=75
+EVENT_FILTER_NOT_IN=76
+EVENT_FILTER_BETWEEN=77
+EVENT_FILTER_NOT_BETWEEN=78
+CLASS_IDENT=79
+GUARD_EXPR=80
+OBSERVER_EXPR=81
+VIEW_EXPR=82
+PATTERN_INCL_EXPR=83
+DATABASE_JOIN_EXPR=84
+WHERE_EXPR=85
+HAVING_EXPR=86
+EVAL_BITWISE_EXPR=87
+EVAL_AND_EXPR=88
+EVAL_OR_EXPR=89
+EVAL_EQUALS_EXPR=90
+EVAL_NOTEQUALS_EXPR=91
+EVAL_IDENT=92
+SELECTION_EXPR=93
+SELECTION_ELEMENT_EXPR=94
+STREAM_EXPR=95
+OUTERJOIN_EXPR=96
+LEFT_OUTERJOIN_EXPR=97
+RIGHT_OUTERJOIN_EXPR=98
+FULL_OUTERJOIN_EXPR=99
+GROUP_BY_EXPR=100
+ORDER_BY_EXPR=101
+ORDER_ELEMENT_EXPR=102
+EVENT_PROP_EXPR=103
+EVENT_PROP_SIMPLE=104
+EVENT_PROP_MAPPED=105
+EVENT_PROP_INDEXED=106
+EVENT_LIMIT_EXPR=107
+SEC_LIMIT_EXPR=108
+MIN_LIMIT_EXPR=109
+INSERTINTO_EXPR=110
+INSERTINTO_EXPRCOL=111
+CONCAT=112
+LIB_FUNCTION=113
+UNARY_MINUS=114
+TIME_PERIOD=115
+ARRAY_EXPR=116
+DAY_PART=117
+HOUR_PART=118
+MINUTE_PART=119
+SECOND_PART=120
+MILLISECOND_PART=121
+NOT_IN_SET=122
+NOT_BETWEEN=123
+NOT_LIKE=124
+NOT_REGEXP=125
+DBSELECT_EXPR=126
+DBFROM_CLAUSE=127
+DBWHERE_CLAUSE=128
+WILDCARD_SELECT=129
+INSERTINTO_STREAM_NAME=130
+IN_RANGE=131
+NOT_IN_RANGE=132
+SUBSELECT_EXPR=133
+EXISTS_SUBSELECT_EXPR=134
+IN_SUBSELECT_EXPR=135
+NOT_IN_SUBSELECT_EXPR=136
+IN_SUBSELECT_QUERY_EXPR=137
+LAST_OPERATOR=138
+WEEKDAY_OPERATOR=139
+INT_TYPE=140
+LONG_TYPE=141
+FLOAT_TYPE=142
+DOUBLE_TYPE=143
+STRING_TYPE=144
+BOOL_TYPE=145
+NULL_TYPE=146
+NUM_INT("a numeric literal")=147
+NUM_LONG=148
+NUM_FLOAT=149
+NUM_DOUBLE=150
+MINUS("a minus '-'")=151
+PLUS("a plus operator '+'")=152
+LITERAL_true="true"=153
+LITERAL_false="false"=154
+LITERAL_null="null"=155
+STRING_LITERAL=156
+QUOTED_STRING_LITERAL=157
+IDENT("an identifier")=158
+LPAREN("an opening parenthesis '('")=159
+COMMA("a comma ','")=160
+RPAREN("a closing parenthesis ')'")=161
+EQUALS("an equals '='")=162
+STAR("a star '*'")=163
+DOT=164
+LBRACK("a left angle bracket '['")=165
+RBRACK("a right angle bracket ']'")=166
+COLON("a colon ':'")=167
+BAND("a binary and '&'")=168
+BOR("a binary or '|'")=169
+BXOR("a binary xor '^'")=170
+SQL_NE("a sql-style not equals '<>'")=171
+NOT_EQUAL("a not equals '!='")=172
+LT_("a lesser then '<'")=173
+GT("a greater then '>'")=174
+LE("a less equals '<='")=175
+GE("a greater equals '>='")=176
+LOR("a logical or '||'")=177
+DIV("a division operator '\'")=178
+MOD("a modulo '%'")=179
+LCURLY("a left curly bracket '{'")=180
+RCURLY("a right curly bracket '}'")=181
+FOLLOWED_BY("an followed-by '->'")=182
+LITERAL_days="days"=183
+LITERAL_day="day"=184
+LITERAL_hours="hours"=185
+LITERAL_hour="hour"=186
+LITERAL_minute="minute"=187
+LITERAL_second="second"=188
+LITERAL_sec="sec"=189
+LITERAL_milliseconds="milliseconds"=190
+LITERAL_millisecond="millisecond"=191
+LITERAL_msec="msec"=192
+QUESTION("a questionmark '?'")=193
+EQUAL("an equals compare '=='")=194
+LNOT("a not '!'")=195
+BNOT("a binary not '~'")=196
+DIV_ASSIGN("a division assign '/='")=197
+PLUS_ASSIGN("a plus assign '+='")=198
+INC("an increment operator '++'")=199
+MINUS_ASSIGN("a minus assign '-='")=200
+DEC("a decrement operator '--'")=201
+STAR_ASSIGN("a star assign '*='")=202
+MOD_ASSIGN("a module assign '%='")=203
+SR("a shift right '>>'")=204
+SR_ASSIGN("a shift right assign '>>='")=205
+BSR("a binary shift right '>>>'")=206
+BSR_ASSIGN("a binary shift right assign '>>>='")=207
+SL("a shift left '<<'")=208
+SL_ASSIGN("a shift left assign '<<='")=209
+BXOR_ASSIGN("a binary xor assign '^='")=210
+BOR_ASSIGN("a binary or assign '|='")=211
+BAND_ASSIGN("a binary and assign '&='")=212
+LAND("a logical and '&&'")=213
+SEMI("a semicolon ';'")=214
+WS=215
+SL_COMMENT=216
+ML_COMMENT=217
+ESC=218
+HEX_DIGIT=219
+EXPONENT=220
+FLOAT_SUFFIX=221
+BOGUS=222
+NUMERIC_PARAM_FREQUENCE=223

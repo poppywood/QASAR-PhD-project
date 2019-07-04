@@ -1,0 +1,5 @@
+F:\VSProjects\ReinstateService\ReinstateService\obj\Debug\ResolveAssemblyReference.cache
+F:\VSProjects\ReinstateService\ReinstateService\bin\ReinstateService.dll
+F:\VSProjects\ReinstateService\ReinstateService\bin\ReinstateService.pdb
+F:\VSProjects\ReinstateService\ReinstateService\obj\Debug\ReinstateService.dll
+F:\VSProjects\ReinstateService\ReinstateService\obj\Debug\ReinstateService.pdb

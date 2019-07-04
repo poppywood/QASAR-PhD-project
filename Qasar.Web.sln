@@ -1,0 +1,170 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{452E42FD-D222-496E-8283-E89FDACD2C25}"
+	ProjectSection(SolutionItems) = preProject
+		INSERT.sql = INSERT.sql
+		Lazaowska Test Data.txt = Lazaowska Test Data.txt
+		Lazowska Results.txt = Lazowska Results.txt
+		metrics.sql = metrics.sql
+		Script to save test data.sql = Script to save test data.sql
+		truncate.sql = truncate.sql
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Code Style Enforcer", "Code Style Enforcer", "{CF24C233-CFC8-4A18-86E8-190E315DD91B}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\ImplementationRules.xml = ..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\ImplementationRules.xml
+		..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\NameRules.xml = ..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\NameRules.xml
+		..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\VisibilityRules.xml = ..\..\..\..\..\..\Program Files\Code Style Enforcer\CustomRules\VisibilityRules.xml
+	EndProjectSection
+	ProjectSection(FolderStartupServices) = postProject
+		{B4F97281-0DBD-4835-9ED8-7DFB966E87FF} = {B4F97281-0DBD-4835-9ED8-7DFB966E87FF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.Web", "Qasar.Web\Qasar.Web.csproj", "{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.Mva", "Qasar.Mva\Qasar.Mva.csproj", "{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.GA", "Qasar.GA\Qasar.GA.csproj", "{32BB0927-19EA-452D-9522-C47048C1B13E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.ObjectLayer", "Qasar.Objects\Qasar.ObjectLayer.csproj", "{12EA1798-307D-4759-9E8B-70F5A1545560}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.DataLayer", "Qasar.DataLayer\Qasar.DataLayer.csproj", "{588B6E28-F04D-4658-A9AB-AD03213821D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.Controller", "Qasar.Controller\Qasar.Controller.csproj", "{656B2338-142B-45E0-B4F7-22784046B772}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.KMeans", "Qasar.KMeans\Qasar.KMeans.csproj", "{AF77DB13-4169-4D8D-9200-7BA806E273D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.ESB.Core", "Qasar.ESB.Core\Qasar.ESB.Core.csproj", "{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.Monitor", "Qasar.Monitor\Qasar.Monitor.csproj", "{7CBBF621-CF65-4190-8005-98E69A3312BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.ESBService", "Qasar.ESBService\Qasar.ESBService.csproj", "{626EE42B-8AAB-4EC8-8D74-8206A812591E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.SLA", "Qasar.SLA\Qasar.SLA.csproj", "{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qasar.Console", "Qasar.Console\Qasar.Console.csproj", "{5876C38F-E235-4F30-B20B-5DF0C34B8593}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Java|Any CPU = Debug_Java|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release_Java|Any CPU = Release_Java|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD3F88D0-510A-4BA9-AC3B-1428A47DB3A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32BB0927-19EA-452D-9522-C47048C1B13E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12EA1798-307D-4759-9E8B-70F5A1545560}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588B6E28-F04D-4658-A9AB-AD03213821D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{656B2338-142B-45E0-B4F7-22784046B772}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF77DB13-4169-4D8D-9200-7BA806E273D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EE7F42C-3227-496F-A114-EDCB1CEC7AA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CBBF621-CF65-4190-8005-98E69A3312BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{626EE42B-8AAB-4EC8-8D74-8206A812591E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD1D763F-2CA2-4DE7-BAB2-F84DC8AD5BD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Debug_Java|Any CPU.ActiveCfg = Debug|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Debug_Java|Any CPU.Build.0 = Debug|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Release_Java|Any CPU.ActiveCfg = Release|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Release_Java|Any CPU.Build.0 = Release|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5876C38F-E235-4F30-B20B-5DF0C34B8593}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		CodeStyleEnforcer_Active = -1
+		CodeStyleEnforcer_RulesLocation = 0
+	EndGlobalSection
+	GlobalSection(TextTemplating) = postSolution
+		TextTemplating = 1
+	EndGlobalSection
+EndGlobal

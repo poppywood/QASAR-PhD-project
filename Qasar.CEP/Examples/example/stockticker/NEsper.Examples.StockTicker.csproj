@@ -1,0 +1,68 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2A28857D-1A87-4D76-9F68-189E3BAF3860}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NEsper.Examples.StockTicker</RootNamespace>
+    <AssemblyName>NEsper.Examples.StockTicker</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="commons-logging, Version=1.0.2606.16893, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\commons-logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NEsper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\NEsper.dll</HintPath>
+    </Reference>
+    <Reference Include="NEsper.Tests, Version=1.0.2812.42132, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\NEsper.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.2.9.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="eventbean\LimitAlert.cs" />
+    <Compile Include="eventbean\PriceLimit.cs" />
+    <Compile Include="eventbean\StockTick.cs" />
+    <Compile Include="monitor\StockTickerAlertListener.cs" />
+    <Compile Include="monitor\StockTickerEmittedListener.cs" />
+    <Compile Include="monitor\StockTickerMonitor.cs" />
+    <Compile Include="StockTickerEventGenerator.cs" />
+    <Compile Include="StockTickerRegressionConstants.cs" />
+    <Compile Include="TestStockTickerGenerator.cs" />
+    <Compile Include="TestStockTickerMultithreaded.cs" />
+    <Compile Include="TestStockTickerSimple.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\support\NEsper.Examples.Support.csproj">
+      <Project>{AEFD1517-078A-4A7F-8096-CE007C104189}</Project>
+      <Name>NEsper.Examples.Support</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

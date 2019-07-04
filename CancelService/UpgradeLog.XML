@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="CancelService">
+</Property><Property Name="Solution File" Value="C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\CancelService\CancelService.sln">
+</Property><Property Name="Date" Value="16 December 2008">
+</Property><Property Name="Time" Value="09:50">
+</Property></Properties><Event ErrorLevel="0" Project="CancelService" Source="CancelService\CancelService.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="CancelService" Source="CancelService\CancelService.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="CancelService.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="CancelService.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="CancelService" Source="CancelService\CancelService.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

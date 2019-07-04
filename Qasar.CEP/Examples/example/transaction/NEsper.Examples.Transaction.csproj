@@ -1,0 +1,80 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{168B2482-4D0D-4450-A3F5-C57B87B830DF}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>NEsper.Example.Transaction</RootNamespace>
+    <AssemblyName>NEsper.Examples.Transaction</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="commons-logging, Version=1.0.2606.16893, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\commons-logging.dll</HintPath>
+    </Reference>
+    <Reference Include="NEsper, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\NEsper.dll</HintPath>
+    </Reference>
+    <Reference Include="NEsper.Tests, Version=1.0.2815.39790, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\NEsper.Tests.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.2.9.0, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="CombinedEventListener.cs" />
+    <Compile Include="CombinedEventStmt.cs" />
+    <Compile Include="FindMissingEventListener.cs" />
+    <Compile Include="FindMissingEventStmt.cs" />
+    <Compile Include="RealtimeSummaryGroupListener.cs" />
+    <Compile Include="RealtimeSummaryStmt.cs" />
+    <Compile Include="RealtimeSummaryTotalsListener.cs" />
+    <Compile Include="sim\EventSource.cs" />
+    <Compile Include="sim\FeederOutputStream.cs" />
+    <Compile Include="sim\FieldGenerator.cs" />
+    <Compile Include="sim\OutputStream.cs" />
+    <Compile Include="sim\PrinterOutputStream.cs" />
+    <Compile Include="sim\RandomUtil.cs" />
+    <Compile Include="sim\ShuffledBucketOutput.cs" />
+    <Compile Include="sim\TransactionEventSource.cs" />
+    <Compile Include="sim\TxnGenMain.cs" />
+    <Compile Include="TestCombinedEventStmt.cs" />
+    <Compile Include="TestFindMissingEventStmt.cs" />
+    <Compile Include="TestRealtimeSummaryStmt.cs" />
+    <Compile Include="TestStmtBase.cs" />
+    <Compile Include="TestTxnSimMain.cs" />
+    <Compile Include="TxnEventA.cs" />
+    <Compile Include="TxnEventB.cs" />
+    <Compile Include="TxnEventBase.cs" />
+    <Compile Include="TxnEventC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\support\NEsper.Examples.Support.csproj">
+      <Project>{AEFD1517-078A-4A7F-8096-CE007C104189}</Project>
+      <Name>NEsper.Examples.Support</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,5 @@
+bin\ReinstateService.dll
+bin\ReinstateService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\ReinstateService.dll
+obj\Debug\ReinstateService.pdb

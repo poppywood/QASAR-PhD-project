@@ -1,0 +1,14 @@
+<publishData>
+  <publishTarget publishUrl="http://localhost/CancelService/">
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Data.dll" publishTime="22/05/2006 11:31:00" />
+    <file relUrl="CancelService.asmx" publishTime="10/06/2006 12:42:20" />
+    <file relUrl="bin/Qasar.DataAccessLayer.dll" publishTime="10/06/2006 11:58:50" />
+    <file relUrl="bin/Microsoft.Practices.ObjectBuilder.dll" publishTime="22/05/2006 11:31:00" />
+    <file relUrl="bin/Qasar.DataAccessLayer.SqlClient.dll" publishTime="10/06/2006 11:58:54" />
+    <file relUrl="Web.config" publishTime="10/06/2006 12:16:24" />
+    <file relUrl="bin/Qasar.dll" publishTime="10/06/2006 11:58:46" />
+    <file relUrl="bin/CancelService.dll" publishTime="08/07/2006 09:07:30" />
+    <file relUrl="bin/Microsoft.Practices.EnterpriseLibrary.Common.dll" publishTime="22/05/2006 11:31:00" />
+    <file relUrl="bin/CancelService.pdb" publishTime="08/07/2006 09:07:30" />
+  </publishTarget>
+</publishData>

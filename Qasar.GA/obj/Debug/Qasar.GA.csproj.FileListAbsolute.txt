@@ -1,0 +1,11 @@
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.GA.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.GA.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.DataLayer.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.Mva.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.Objects.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.Objects.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.DataLayer.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\bin\Debug\Qasar.Mva.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\obj\Debug\Qasar.GA.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.GA\obj\Debug\Qasar.GA.pdb

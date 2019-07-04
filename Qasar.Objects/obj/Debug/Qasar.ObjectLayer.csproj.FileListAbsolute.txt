@@ -1,0 +1,5 @@
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Objects\bin\Debug\Qasar.Objects.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Objects\bin\Debug\Qasar.Objects.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Objects\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Objects\obj\Debug\Qasar.Objects.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Objects\obj\Debug\Qasar.Objects.pdb

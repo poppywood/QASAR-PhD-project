@@ -1,0 +1,5 @@
+bin\CancelService.dll
+bin\CancelService.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\CancelService.dll
+obj\Debug\CancelService.pdb

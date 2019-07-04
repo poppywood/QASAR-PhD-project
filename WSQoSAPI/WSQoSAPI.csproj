@@ -1,0 +1,168 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5BD45399-BC23-4492-959B-F1698C8D9ED4}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>WSQoSAPI</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Uddi.Sdk">
+      <Name>Microsoft.Uddi.Sdk</Name>
+      <HintPath>ExternalReferences\Microsoft.Uddi.Sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib">
+      <Name>mscorlib</Name>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Name>System.Web.Services</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.Xml</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WSQoSAPI\WSQoSOfferBroker.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="WSQoSAPI.OfferBrokerWebService\OfferBroker.cs" />
+    <Compile Include="WSQoSAPI.OfferBrokerWebService\RemoteOffer.cs" />
+    <Compile Include="WSQoSAPI\ConAndMonSupportAttribute.cs" />
+    <Compile Include="WSQoSAPI\ContractAndMonitoringAttribute.cs" />
+    <Compile Include="WSQoSAPI\CurrencyConverter.cs" />
+    <Compile Include="WSQoSAPI\CustomServerQoSMetricAttribute.cs" />
+    <Compile Include="WSQoSAPI\CustomTransportQoSPriorityAttribute.cs" />
+    <Compile Include="WSQoSAPI\DefaultQoSInfo.cs" />
+    <Compile Include="WSQoSAPI\ImportOffersAttribute.cs" />
+    <Compile Include="WSQoSAPI\ImportQoSDeclarationAttribute.cs" />
+    <Compile Include="WSQoSAPI\InvalidBrokerConfigurationException.cs" />
+    <Compile Include="WSQoSAPI\InvalidItemException.cs" />
+    <Compile Include="WSQoSAPI\LocalOfferBroker.cs" />
+    <Compile Include="WSQoSAPI\NamedItem.cs" />
+    <Compile Include="WSQoSAPI\NamedItemCollection.cs" />
+    <Compile Include="WSQoSAPI\NoCurrencyConverterException.cs" />
+    <Compile Include="WSQoSAPI\NoServicesInListException.cs" />
+    <Compile Include="WSQoSAPI\NoSuchCurrencyCodeException.cs" />
+    <Compile Include="WSQoSAPI\NoSuchWSQoSAttributeException.cs" />
+    <Compile Include="WSQoSAPI\NoTrustedProvidersException.cs" />
+    <Compile Include="WSQoSAPI\NoUddiRegistryUrlException.cs" />
+    <Compile Include="WSQoSAPI\OfferList.cs" />
+    <Compile Include="WSQoSAPI\OperationQoSInfo.cs" />
+    <Compile Include="WSQoSAPI\PriceAttribute.cs" />
+    <Compile Include="WSQoSAPI\ProtocolSupportAttribute.cs" />
+    <Compile Include="WSQoSAPI\QoSDefinition.cs" />
+    <Compile Include="WSQoSAPI\QoSInfo.cs" />
+    <Compile Include="WSQoSAPI\QoSOffer.cs" />
+    <Compile Include="WSQoSAPI\QoSRequirements.cs" />
+    <Compile Include="WSQoSAPI\RemoteOfferBroker.cs" />
+    <Compile Include="WSQoSAPI\SecAndTASupportAttribute.cs" />
+    <Compile Include="WSQoSAPI\SecurityAndTransactionAttribute.cs" />
+    <Compile Include="WSQoSAPI\ServerQoSMetricsAttribute.cs" />
+    <Compile Include="WSQoSAPI\ServiceModel.cs" />
+    <Compile Include="WSQoSAPI\ServiceUpdateList.cs" />
+    <Compile Include="WSQoSAPI\TransportQoSPrioritiesAttribute.cs" />
+    <Compile Include="WSQoSAPI\TrustedParty.cs" />
+    <Compile Include="WSQoSAPI\WSQoSAttribute.cs" />
+    <Compile Include="WSQoSAPI\WSQoSException.cs" />
+    <Compile Include="WSQoSAPI\WSQoSExtension.cs" />
+    <Compile Include="WSQoSAPI\WSQoSExtensionAttribute.cs" />
+    <Compile Include="WSQoSAPI\WSQoSHeaderLogExtension.cs" />
+    <Compile Include="WSQoSAPI\WSQoSHeaderLogExtensionAttribute.cs" />
+    <Compile Include="WSQoSAPI\WSQoSMetricDef.cs" />
+    <Compile Include="WSQoSAPI\WSQoSOfferBroker.cs" />
+    <Compile Include="WSQoSAPI\WSQoSOfferBrokerWebService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WSQoSAPI\WSQoSOfferManager.cs" />
+    <Compile Include="WSQoSAPI\WSQoSOntology.cs" />
+    <Compile Include="WSQoSAPI\WSQoSOntologyManager.cs" />
+    <Compile Include="WSQoSAPI\WSQoSPriorityDef.cs" />
+    <Compile Include="WSQoSAPI\WSQoSProtocolDef.cs" />
+    <Compile Include="WSQoSAPI\WSQoSReflector.cs" />
+    <Compile Include="WSQoSAPI\WSQoSRequirementManager.cs" />
+    <Compile Include="WSQoSAPI\WSQoSSoapHeader.cs" />
+    <Compile Include="WSQoSAPI\WSQoSStatementOverwrittenException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExternalReferences\Microsoft.Uddi.Sdk.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

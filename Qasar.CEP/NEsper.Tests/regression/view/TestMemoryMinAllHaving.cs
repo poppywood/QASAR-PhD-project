@@ -1,0 +1,91 @@
+using System;
+using System.Diagnostics;
+using System.Threading;
+
+using net.esper.client;
+using net.esper.client.time;
+using net.esper.compat;
+using net.esper.support.bean;
+using net.esper.support.client;
+using net.esper.support.util;
+
+using NUnit.Framework;
+
+using org.apache.commons.logging;
+
+namespace net.esper.regression.view
+{
+    [TestFixture]
+    public class TestMemoryMinAllHaving
+    {
+        private EPServiceProvider epService;
+        private SupportUpdateListener listener;
+        private readonly Random random = new Random();
+
+        [SetUp]
+        public virtual void setUp()
+        {
+            listener = new SupportUpdateListener();
+
+            EPServiceProviderManager.PurgeAllProviders();
+            epService = EPServiceProviderManager.GetDefaultProvider(SupportConfigFactory.Configuration);
+            epService.Initialize();
+        }
+
+        [Test]
+        public void testMemory()
+        {
+            String statementText = "select price, min(price) as minPrice " + "from " + typeof(SupportMarketDataBean).FullName + ".win:time(30)" + "having price >= min(price) * (1.02)";
+
+            EPStatement testView = epService.EPAdministrator.CreateEQL(statementText);
+            testView.AddListener(listener);
+
+            sendClockingInternal();
+
+            //sendClockingExternal();
+        }
+
+        private void sendClockingInternal()
+        {
+            // Change to perform a long-running tests, each loop is 1 second
+            int LOOP_COUNT = 2;
+            int loopCount = 0;
+
+            while (true)
+            {
+                log.Info("Sending batch " + loopCount);
+
+                // send events
+                long startTime = DateTimeHelper.CurrentTimeMillis;
+                for (int i = 0; i < 5000; i++)
+                {
+                    double price = 50 + 49 * random.Next(100) / 100.0;
+                    SendEvent(price);
+                }
+                long endTime = DateTimeHelper.CurrentTimeMillis;
+
+                // sleep remainder of 1 second
+                long delta = endTime - startTime;
+                if (delta < 950)
+                {
+                    Thread.Sleep((int) (950 - delta));
+                }
+
+                listener.Reset();
+                loopCount++;
+                if (loopCount > LOOP_COUNT)
+                {
+                    break;
+                }
+            }
+        }
+
+        private void SendEvent(double price)
+        {
+            SupportMarketDataBean bean = new SupportMarketDataBean("DELL", price, -1L, null);
+            epService.EPRuntime.SendEvent(bean);
+        }
+
+        private static readonly Log log = LogFactory.GetLog(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+    }
+}

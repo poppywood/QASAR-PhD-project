@@ -1,0 +1,224 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32BB0927-19EA-452D-9522-C47048C1B13E}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Qasar.GA</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Qasar.GA</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <SccProjectName>Svn</SccProjectName>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChromosomeIndex.cs" />
+    <Compile Include="Decoder.cs" />
+    <Compile Include="GeneticAlgorithm.cs" />
+    <Compile Include="MvaFitnessFunction.cs" />
+    <Compile Include="org.jgap.impl\BestChromosomesSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\BooleanGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\CauchyRandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\ChainOfSelectors.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\ChromosomePool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\CompositeGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\CrossoverOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\DefaultConfiguration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\DefaultMutationRateCalculator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\DoubleGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\GaussianRandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\GreedyCrossover.cs" />
+    <Compile Include="org.jgap.impl\IntegerGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\MutationOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\NumberGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\Pool.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\RandomWrapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\ReproductionOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\StockRandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\StringGene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap.impl\SwappingMutationOperator.cs" />
+    <Compile Include="org.jgap.impl\WeightedRouletteSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\Chromosome.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\Configuration.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\DefaultFitnessEvaluator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\FitnessEvaluator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\FitnessFunction.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\Gene.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\GeneticOperator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\Genotype.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\InvalidConfigurationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\MutationRateCalculator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\NaturalSelector.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\RandomGenerator.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\SupportClass.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="org.jgap\UnsupportedRepresentationException.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Content Include="org.jgap.impl\package.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Qasar.DataLayer\Qasar.DataLayer.csproj">
+      <Project>{588B6E28-F04D-4658-A9AB-AD03213821D8}</Project>
+      <Name>Qasar.DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Qasar.Mva\Qasar.Mva.csproj">
+      <Project>{1DF2BF89-5E3D-4ECE-8313-E9FFC5914B27}</Project>
+      <Name>Qasar.Mva</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{B4F97281-0DBD-4835-9ED8-7DFB966E87FF}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

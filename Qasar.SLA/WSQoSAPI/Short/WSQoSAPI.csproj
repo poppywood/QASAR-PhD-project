@@ -1,0 +1,78 @@
+<VisualStudioProject>
+  <CSHARP ProjectType="Local" ProductVersion="7.10.3077" SchemaVersion="2.0" ProjectGuid="{aada74f4-5390-45df-9128-5a9594be0046}">
+    <Build>
+      <Settings ApplicationIcon="" AssemblyKeyContainerName="" AssemblyName="WSQoSAPI" AssemblyOriginatorKeyFile="" DefaultClientScript="JScript" DefaultHTMLPageLayout="Grid" DefaultTargetSchema="IE50" DelaySign="false" OutputType="Library" PreBuildEvent="" PostBuildEvent="" RootNamespace="" RunPostBuildEvent="OnBuildSuccess" StartupObject="">
+        <Config Name="Debug" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="DEBUG;TRACE" DocumentationFile="" DebugSymbols="true" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="false" OutputPath="bin\Debug\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+        <Config Name="Release" AllowUnsafeBlocks="false" BaseAddress="285212672" CheckForOverflowUnderflow="false" ConfigurationOverrideFile="" DefineConstants="TRACE" DocumentationFile="" DebugSymbols="false" FileAlignment="4096" IncrementalBuild="false" NoStdLib="false" NoWarn="" Optimize="true" OutputPath="bin\Release\" RegisterForComInterop="false" RemoveIntegerChecks="false" TreatWarningsAsErrors="false" WarningLevel="4" />
+      </Settings>
+      <References>
+        <Reference Name="System.Web.Services" AssemblyName="System.Web.Services" />
+        <Reference Name="mscorlib" AssemblyName="mscorlib" />
+        <Reference Name="System.Xml" AssemblyName="System.Xml" />
+        <Reference Name="System" AssemblyName="System" />
+        <Reference Name="Microsoft.Uddi.Sdk" AssemblyName="Microsoft.Uddi.Sdk" />
+      </References>
+    </Build>
+    <Files>
+      <Include>
+        <File RelPath="WSQoSAPI\WSQoSOfferBroker.resx" BuildAction="EmbeddedResource" />
+        <File RelPath="AssemblyInfo.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ConAndMonSupportAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ContractAndMonitoringAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\CurrencyConverter.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\CustomServerQoSMetricAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\CustomTransportQoSPriorityAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\DefaultQoSInfo.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ImportOffersAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ImportQoSDeclarationAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\InvalidBrokerConfigurationException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\InvalidItemException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\LocalOfferBroker.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NamedItem.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NamedItemCollection.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoCurrencyConverterException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoServicesInListException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoSuchCurrencyCodeException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoSuchWSQoSAttributeException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoTrustedProvidersException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\NoUddiRegistryUrlException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\OfferList.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\OperationQoSInfo.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\PriceAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ProtocolSupportAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\QoSDefinition.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\QoSInfo.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\QoSOffer.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\QoSRequirements.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\RemoteOfferBroker.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\SecAndTASupportAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\SecurityAndTransactionAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ServerQoSMetricsAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ServiceModel.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\ServiceUpdateList.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\TransportQoSPrioritiesAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\TrustedParty.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSExtension.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSExtensionAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSHeaderLogExtension.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSHeaderLogExtensionAttribute.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSMetricDef.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSOfferBroker.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSOfferBrokerWebService.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSOfferManager.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSOntology.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSOntologyManager.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSPriorityDef.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSProtocolDef.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSReflector.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSRequirementManager.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSSoapHeader.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI\WSQoSStatementOverwrittenException.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI.OfferBrokerWebService\OfferBroker.cs" BuildAction="Compile" />
+        <File RelPath="WSQoSAPI.OfferBrokerWebService\RemoteOffer.cs" BuildAction="Compile" />
+      </Include>
+    </Files>
+  </CSHARP>
+</VisualStudioProject>

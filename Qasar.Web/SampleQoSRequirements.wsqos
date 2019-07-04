@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsqos>
+	<definition>
+		<offers name="Test Offer">
+			<include url=""/>
+			<qosOffer name="Gold">
+				<defaultQoSInfo>
+					<serverQoSMetrics>
+						<processingTime>42</processingTime>
+					</serverQoSMetrics>
+				</defaultQoSInfo>
+				<operationQoSInfo name="Create">
+					<serverQoSMetrics>
+						<processingTime>500</processingTime>
+					</serverQoSMetrics>
+				</operationQoSInfo>
+				<operationQoSInfo name="Update">
+					<serverQoSMetrics>
+						<processingTime>180</processingTime>
+					</serverQoSMetrics>
+				</operationQoSInfo>
+				<operationQoSInfo name="Renew">
+					<serverQoSMetrics>
+						<processingTime>150</processingTime>
+					</serverQoSMetrics>
+				</operationQoSInfo>
+				<operationQoSInfo name="Cancel">
+					<serverQoSMetrics>
+						<processingTime>90</processingTime>
+					</serverQoSMetrics>
+				</operationQoSInfo>
+				<price currency="EUR">0.22</price>
+			</qosOffer>
+		</offers>
+	</definition>
+</wsqos>

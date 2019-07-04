@@ -1,0 +1,9 @@
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.Monitor.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.Monitor.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.DataLayer.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.Objects.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.Objects.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\bin\Debug\Qasar.DataLayer.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\obj\Debug\Qasar.Monitor.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Monitor\obj\Debug\Qasar.Monitor.pdb

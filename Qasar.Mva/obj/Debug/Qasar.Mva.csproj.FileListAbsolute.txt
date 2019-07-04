@@ -1,0 +1,5 @@
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Mva\bin\Debug\Qasar.Mva.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Mva\bin\Debug\Qasar.Mva.pdb
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Mva\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Mva\obj\Debug\Qasar.Mva.dll
+C:\Users\Shelly\Documents\Visual Studio 2008\Projects\qasar\Qasar.Mva\obj\Debug\Qasar.Mva.pdb
